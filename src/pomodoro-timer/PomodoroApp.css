@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  --pomodoro-background-color: darkcyan;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Orbitron&display=swap');
+
+.PomodoroApp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--pomodoro-background-color);
+  font-family: 'Indie Flower', cursive;
+  color: white;
+  width: 100vw;
+  height: 100vh;
+}
+
+.pomodoro-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  max-width: 450px;
+  height: 450px;
+}
+
+.pomodoro-header {
+  font-size: 3.25rem;
+}
+
+.pomodoro-button {
+  background-color: var(--pomodoro-background-color);
+  border: none;
+  outline: none;
+}
+
+.settings {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1.75rem;
+  width: 100%;
+}
+
+.setting-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 75px;
+}
+
+.settings-label {
+  font-weight: 600;
+}
+
+.pomodoro-button-row {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.settings-value {
+  width: 25px;
+}
+
+.pomodoro-button-row button {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.timer {
+  border-radius: 10px;
+  font-size: 2.25rem;
+  padding: 5px 50px;
+  border: 3px solid darkgreen;
+}
+
+.red-color {
+  color: red;
+}
+
+.blue-color {
+  color: blue;
+}
+
+.time-left {
+    font-size: 3rem;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.control-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 40%;
+}
+
+.control-buttons button {
+  color: white;
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 450px) {
+  .settings { 
+    flex-direction: column;
+    height: 170px;
+  }
+
+  .pomodoro-content {
+    height: calc(100vh - 60px);
+  }
+}

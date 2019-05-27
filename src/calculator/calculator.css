@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+
+.calc-button {
+  font-size: 1rem;
+  outline: none;
+}
+
+button.calc-button:hover {
+  color: black;
+}
+
+.CalculatorApp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  
+  height: calc(100vh - var(--main-navbar-height));
+  background-color: antiquewhite;
+}
+
+.calculator-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: minmax(75px, 1fr) repeat(5, minmax(5px, 75px));
+  grid-template-areas: 
+  'display display display display'
+  'ac ac divide multiply'
+  'seven eight nine subtract'
+  'four five six add'
+  'one two three equals'
+  'zero zero decimal equals';
+  width: 330px;
+  max-height: calc(100% - var(--main-navbar-height));
+  padding: 5px;
+  background-color: black;
+  border: 2px solid lightcoral;
+}
+
+.calc-display {
+  background-color: black;
+  text-align: right;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.input-display {
+  color: white;
+  height: 65%;
+  font-size: 2.5rem;
+  overflow: scroll;
+}
+
+.expression-display {
+  color: orange;
+  min-height: 35%;
+  font-size: 1.5rem;
+  overflow: scroll;
+}
+
+.number-button {
+  background-color: darkgray;
+  color: white;
+}
+
+.operator-button {
+  background-color: gray;
+  color: white;
+}
+
+.ac-button {
+  background-color: red;
+  color: white;
+}
+
+.equals-button {
+  background-color: darkblue;
+  color: white;
+}
+
+.created-by {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 10px;
+}

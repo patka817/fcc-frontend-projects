@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  --navbar-background-color: #696969;
+  --background-color: white;
+  --text-color: black;
+  --darkAccent: #224B4B;
+}
+
+.MarkdownApp {
+  background-color: var(--background-color);
+}
+
+.navbar, .navbar-left, .navbar-right {
+  background-color: var(--navbar-background-color);
+} 
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  height: 5vh;
+  width: 100%;
+  border-bottom: 1px solid gray;
+  color: var(--text-color);
+  font-size: 1.25rem;
+}
+
+.navbar-left {
+  display: flex;
+  flex-direction: row;
+  min-width: 25%;
+  align-items: center;
+}
+
+.navbar-left div {
+  padding: 0 10px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.navbar-right button {
+  border: 0;
+  background-color: var(--navbar-background-color);
+  color: var(--text-color);
+  font-size: 1.25rem;
+}
+
+.navbar-right button:hover {
+  color: lightblue;
+}
+
+.fa-arrows-alt-h {
+  transform: rotate(-45deg);
+}
+
+.editor-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 40vw;
+  z-index: 2;
+  border: 1px solid gray;
+}
+
+#editor {
+  width: 100%;
+  height: 95vh;
+  padding: 5px;
+  resize: none;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.preview-container {
+  margin-left: 40vw;
+  border: 1px solid gray;
+}
+
+#preview {
+  color: var(--text-color);
+  padding: 5px;
+}
+
+.full-screen {
+  position: fixed;
+  width: 100vw;
+  z-index: 10; /* so we don't have to hide any view, we just display it on top.. */
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+/* MARKDOWN */
+#preview blockquote {
+    border-left: 3px solid #224B4B;
+    color: #224B4B;
+    padding-left: 5px;
+    margin-left: 25px;
+  }
+
+  #preview code {
+    background: white;
+    padding: 1px 4px 2px 4px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  #preview pre {
+    background: white;
+    padding: 5px 0 5px 5px;
+  }
+
+  #preview h1 {
+    border-bottom: 2px solid var(--darkAccent);
+  }
+
+  #preview h2 {
+    border-bottom: 1px solid var(--darkAccent);
+  }
+
+  #preview table {
+    border-collapse: collapse;
+  }
+
+  #preview td,
+  th {
+    border: 2px solid var(--darkAccent);
+    padding-left: 5px;
+    padding-right: 5px;
+  }
