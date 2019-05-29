@@ -8,9 +8,11 @@ import NavBar from '../BackComponent.jsx';
 function CalculatorApp() {
   return (
     <Provider store={store}>
-      <NavBar title='Calculator'/>
-      <div className="CalculatorApp">
-        <Calculator />
+      <div>
+        <NavBar title='Calculator' />
+        <div className="CalculatorApp">
+          <Calculator />
+        </div>
       </div>
     </Provider>
   );

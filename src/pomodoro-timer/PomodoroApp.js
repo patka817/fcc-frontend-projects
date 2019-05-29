@@ -7,7 +7,7 @@ import { store } from './ReduxPart';
 
 function PomodoroApp() {
   return (
-    <>
+    <div>
       <NavBar title='Pomodoro Timer' />
       <div className="PomodoroApp">
         <div className='pomodoro-content'>
@@ -22,7 +22,7 @@ function PomodoroApp() {
 
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom'
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import './App.css';
 import './calculator/calculatorApp.js';
 import CalculatorApp from './calculator/calculatorApp.js';
@@ -13,14 +14,24 @@ function App() {
   const supportsHistory = 'pushState' in window.history;
   return (
     <Router forceRefresh={!supportsHistory}>
-      <Switch>
-        <Route exact path="/" component={MainApp} />
-        <Route path="/calculator" component={CalculatorApp} />
-        <Route path="/drum-machine" component={DrumApp} />
-        <Route path="/markdown-editor" component={MarkdownApp} />
-        <Route path="/quote-machine" component={QuoteApp} />
-        <Route path="/pomodoro-timer" component={PomodoroApp} />
-      </Switch>
+      <Route render={({ location }) => {
+        const { key } = location;
+
+        return (
+          <TransitionGroup component={null}>
+            <CSSTransition key={key} timeout={300} classNames='fade'>
+              <Switch location={location}>
+                <Route exact path="/" component={MainApp} />
+                <Route path="/calculator" component={CalculatorApp} />
+                <Route path="/drum-machine" component={DrumApp} />
+                <Route path="/markdown-editor" component={MarkdownApp} />
+                <Route path="/quote-machine" component={QuoteApp} />
+                <Route path="/pomodoro-timer" component={PomodoroApp} />
+              </Switch>
+              </CSSTransition >
+          </TransitionGroup>
+        )
+      }} />
     </Router>
   );
 }

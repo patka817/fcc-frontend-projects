@@ -27,8 +27,10 @@ const App = connect(mapStateToAppProps, null)(AppPresentational);
 const QuoteApp = () => {
   return (
     <Provider store={store}>
-      <NavBar title='Quote Machine'/>
-      <App />
+      <div>
+        <NavBar title='Quote Machine' />
+        <App />
+      </div>
     </Provider>
   );
 }
