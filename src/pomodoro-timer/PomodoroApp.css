@@ -17,7 +17,6 @@
   font-family: 'Indie Flower', cursive;
   color: white;
   width: 100vw;
-  height: 100vh;
 }
 
 .pomodoro-content {
@@ -119,5 +118,17 @@
 
   .pomodoro-content {
     height: calc(100vh - 60px);
+  }
+}
+
+@media only screen and (min-height: 510px) {
+  .PomodoroApp {
+    height: calc(100vh - var(--main-navbar-height));
+  }
+}
+
+@media only screen and (max-height: 509px) {
+  .PomodoroApp {
+    min-height: 510px;
   }
 }
