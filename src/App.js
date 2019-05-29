@@ -1,7 +1,5 @@
 import React from 'react';
 import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom'
-import posed, { PoseGroup } from 'react-pose';
-
 import './App.css';
 import './calculator/calculatorApp.js';
 import CalculatorApp from './calculator/calculatorApp.js';
@@ -11,27 +9,18 @@ import QuoteApp from './quote-machine/QuoteApp.js';
 import PomodoroApp from './pomodoro-timer/PomodoroApp.js';
 import NavBar from './BackComponent';
 
-const RoutesContainer = posed.div({
-  enter: { opacity: 1 },
-  exit: { opacity: 0 }
-});
-
 function App() {
   const supportsHistory = 'pushState' in window.history;
   return (
     <Router forceRefresh={!supportsHistory}>
-      <PoseGroup>
-      <RoutesContainer key={window.history.location}>
-        <Switch>
-          <Route exact path="/" component={MainApp} />
-          <Route path="/calculator" component={CalculatorApp} />
-          <Route path="/drum-machine" component={DrumApp} />
-          <Route path="/markdown-editor" component={MarkdownApp} />
-          <Route path="/quote-machine" component={QuoteApp} />
-          <Route path="/pomodoro-timer" component={PomodoroApp} />
-        </Switch>
-      </RoutesContainer>
-      </PoseGroup>
+      <Switch>
+        <Route exact path="/" component={MainApp} />
+        <Route path="/calculator" component={CalculatorApp} />
+        <Route path="/drum-machine" component={DrumApp} />
+        <Route path="/markdown-editor" component={MarkdownApp} />
+        <Route path="/quote-machine" component={QuoteApp} />
+        <Route path="/pomodoro-timer" component={PomodoroApp} />
+      </Switch>
     </Router>
   );
 }
